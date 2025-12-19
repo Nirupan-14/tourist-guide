@@ -9,11 +9,17 @@ const leopardBg =
   "https://images.unsplash.com/photo-1508672019048-805c876b67e2?auto=format&fit=crop&w=1600&q=80&sat=-10&exp=-5";
 const forestPng = "https://pngimg.com/d/leaves_PNG3640.png";
 const leopardPng = "https://pngimg.com/d/leopard_PNG14652.png";
+ 
 
 const cardVariants = {
   initial: { opacity: 0, y: 40 },
-  animate: { opacity: 1, y: 0, transition: { duration: 0.7, ease: "easeOut" } },
+  animate: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.7, ease: [0.42, 0, 0.58, 1] }, // cubic-bezier for easeOut
+  },
 };
+
 
 export default function Home() {
   const { t } = useLanguage();
