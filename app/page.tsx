@@ -2,24 +2,21 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 import { useLanguage } from "@/components/LanguageProvider";
 
 const leopardBg =
   "https://images.unsplash.com/photo-1508672019048-805c876b67e2?auto=format&fit=crop&w=1600&q=80&sat=-10&exp=-5";
 const forestPng = "https://pngimg.com/d/leaves_PNG3640.png";
 const leopardPng = "https://pngimg.com/d/leopard_PNG14652.png";
- 
 
-const cardVariants = {
+const cardVariants: Variants = {
   initial: { opacity: 0, y: 40 },
   animate: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.7, ease: [0.42, 0, 0.58, 1] }, // cubic-bezier for easeOut
   },
 };
-
 
 export default function Home() {
   const { t } = useLanguage();
@@ -75,7 +72,11 @@ export default function Home() {
                 variants={cardVariants}
                 initial="initial"
                 animate="animate"
-                transition={{ delay: 0.2 * idx }}
+                transition={{ 
+                  delay: 0.2 * idx,
+                  duration: 0.7,
+                  ease: [0.43, 0.13, 0.23, 0.96]
+                }}
                 className="rounded-2xl bg-white/15 px-4 py-5 text-sm text-[#F7F3E9] shadow-inner shadow-black/10"
               >
                 <p className="text-xs uppercase tracking-[0.2em] text-[#F7F3E9]/70">{item.label}</p>
@@ -98,7 +99,7 @@ export default function Home() {
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.2 }}
-            transition={{ duration: 0.7, ease: "easeOut" }}
+            transition={{ duration: 0.7, ease: [0.43, 0.13, 0.23, 0.96] }}
             className="rounded-3xl border border-[#1B4332]/10 bg-white/80 p-8 shadow-lg shadow-[#1B4332]/10 backdrop-blur-xl"
           >
             <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#6B4F3F]">
@@ -121,7 +122,7 @@ export default function Home() {
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.2 }}
-            transition={{ duration: 0.7, delay: 0.15, ease: "easeOut" }}
+            transition={{ duration: 0.7, delay: 0.15, ease: [0.43, 0.13, 0.23, 0.96] }}
             className="grid gap-5 sm:grid-cols-2"
           >
             {t("highlights.cards.0") && [0, 1, 2].map((idx) => (
@@ -159,7 +160,7 @@ export default function Home() {
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.2 }}
-                transition={{ duration: 0.6, delay: idx * 0.05 }}
+                transition={{ duration: 0.6, delay: idx * 0.05, ease: [0.43, 0.13, 0.23, 0.96] }}
                 className="rounded-2xl bg-white/10 p-5 shadow-lg shadow-black/10 backdrop-blur"
               >
                 <h3 className="text-lg font-semibold">{t(`services.list.${idx}.title`)}</h3>
@@ -170,12 +171,12 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="relative mx-auto mt-16 max-w-6xl px-6">
+      <section className="relative mx-auto mt-16 max-w-6xl px-6 pb-16">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.2 }}
-          transition={{ duration: 0.7, ease: "easeOut" }}
+          transition={{ duration: 0.7, ease: [0.43, 0.13, 0.23, 0.96] }}
           className="overflow-hidden rounded-3xl border border-[#1B4332]/10 bg-white/80 shadow-lg shadow-[#1B4332]/10 backdrop-blur-xl"
         >
           <div className="relative h-64 w-full bg-gradient-to-r from-[#1B4332] via-[#588157] to-[#6B4F3F]">
