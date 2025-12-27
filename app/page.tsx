@@ -7,8 +7,7 @@ import { useLanguage } from "@/components/LanguageProvider";
 
 const leopardBg =
   "https://images.unsplash.com/photo-1508672019048-805c876b67e2?auto=format&fit=crop&w=1600&q=80&sat=-10&exp=-5";
-const forestPng = "https://pngimg.com/d/leaves_PNG3640.png";
-const leopardPng = "https://pngimg.com/d/leopard_PNG14652.png";
+
 
 const cardVariants: Variants = {
   initial: { opacity: 0, y: 40 },
@@ -84,12 +83,8 @@ export default function Home() {
               </motion.div>
             ))}
           </div>
-          <div className="pointer-events-none absolute -left-8 bottom-0 opacity-70 sm:-left-16">
-            <Image src={forestPng} alt="" width={320} height={320} className="animate-float" />
-          </div>
-          <div className="pointer-events-none absolute -right-10 top-10 w-40 opacity-70 sm:w-56 lg:w-64">
-            <Image src={leopardPng} alt="" width={420} height={420} className="drop-shadow-2xl" />
-          </div>
+         
+          
         </div>
       </section>
 

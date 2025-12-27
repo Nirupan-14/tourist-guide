@@ -105,7 +105,7 @@ export const translations: Record<Language, Translation> = {
       contact: "Contact",
     },
     hero: {
-      badge: "Luxury Eco-Safari",
+      badge: "Leopard Safaris",
       title: "Luxury under nature’s canopy",
       subtitle: "Escape the noise and reconnect with nature",
       book: "Book Now",
